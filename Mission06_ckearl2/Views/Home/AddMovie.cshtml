@@ -2,6 +2,48 @@
     ViewData["Title"] = "Movie Entry";
 }
 
-<div>
+@model Mission06_ckearl2.Models.Movie
+
+<div class="mx-auto w-75">
     <h2>Welcome to the page that let's you add a movie to the database!</h2>
+    <form method="post">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label asp-for="Title" for="exampleFormControlInput1" class="form-label">Movie Title</label>
+                <input asp-for="Title" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Movie Title...">
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Rating" for="exampleFormControlInput2" class="form-label">Rating</label>
+                <select asp-for="Rating" type="text" class="form-control" id="exampleFormControlInput2" placeholder="Rating...">
+                    <option value="G">G</option>
+                    <option value="PG">PG</option>
+                    <option value="PG-13">PG-13</option>
+                    <option value="R">R</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label asp-for="Edited" for="exampleFormControlInput3" class="form-label">Edited?</label>
+                <select asp-for="Edited" type="text" class="form-control" id="exampleFormControlInput3" placeholder="Select for yes">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="LentTo" for="exampleFormControlInput4" class="form-label">LentTo</label>
+                <input asp-for="LentTo" type="text" class="form-control" id="exampleFormControlInput4" placeholder="Enter name...">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="Notes" for="exampleFormControlTextarea1" class="form-label">Notes</label>
+            <textarea asp-for="Notes" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter notes about the movie..."></textarea>
+        </div>
+        <div class="row col-md-4">
+            <button class="btn btn-primary" type="submit">Enter a Movie to the Database</button>
+        </div>
+
+    </form>
 </div>

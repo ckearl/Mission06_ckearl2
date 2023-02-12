@@ -23,7 +23,14 @@ namespace Mission06_ckearl2.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult AddMovie()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddMovie(Movie mv)
         {
             return View();
         }
