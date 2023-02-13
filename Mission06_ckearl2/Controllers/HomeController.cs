@@ -41,6 +41,11 @@ namespace Mission06_ckearl2.Controllers
             return View("AllMovies", mv);
         }
 
+        public IActionResult Podcasts()
+        {
+            return Redirect("https://baconsale.com/");
+        }
+
         public IActionResult Privacy()
         {
             return View();
