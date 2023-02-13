@@ -8,6 +8,9 @@ namespace Mission06_ckearl2.Models
 {
     public class Movie
     {
+        [Key]
+        [Required]
+        public int MovieID { get; set; }
         [Required]
         public string Title { get; set; }
         [Required]

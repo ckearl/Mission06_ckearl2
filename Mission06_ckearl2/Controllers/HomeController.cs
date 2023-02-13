@@ -12,10 +12,13 @@ namespace Mission06_ckearl2.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private MovieContext movieContext { get; set; }
 
-        public HomeController(ILogger<HomeController> logger)
+        // Constructor
+        public HomeController(ILogger<HomeController> logger, MovieContext mcontext)
         {
             _logger = logger;
+            movieContext = mcontext;
         }
 
         public IActionResult Index()
@@ -32,7 +35,10 @@ namespace Mission06_ckearl2.Controllers
         [HttpPost]
         public IActionResult AddMovie(Movie mv)
         {
-            return View();
+            movieContext.Add(mv);
+            movieContext.SaveChanges();
+
+            return View("AllMovies", mv);
         }
 
         public IActionResult Privacy()
