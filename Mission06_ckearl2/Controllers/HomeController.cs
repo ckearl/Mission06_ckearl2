@@ -43,6 +43,11 @@ namespace Mission06_ckearl2.Controllers
 
         public IActionResult Podcasts()
         {
+            return View();
+        }
+
+        public IActionResult BaconSale()
+        {
             return Redirect("https://baconsale.com/");
         }
 
